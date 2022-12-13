@@ -1,0 +1,62 @@
+alurnya gini kalo saya mas,
+
+1.buat variable string kosong, yang nantinya buat nampung number sama operator
+2.buat variable untuk state ketika btn equals ditekan maka langsung ganti number
+3.variable string kosong(tampung), ini buat nampung ketika btn 0 ditekan 3 kali, sama variable buat ngitung berapa kali ditekan kek increment (let times = 0)
+4. buat contoh let displayNum = document.getElementById("display").value;
+5.masuk ke func number
+
+    func number(parm)
+        jika variable statenya true
+            maka displayNum = number
+            state = false
+        else
+            ada kondisi lagi jika number = 0
+                maka times++
+                if(times > 1)
+                    tampung += number
+                if(times == 3) maka displayNum += tampung
+                else if(times > 3) maka displayNum += number
+                else displayNum = number
+            else(ini buat angka selain 0)
+                untuk kondisi ini saya panggil funct buat ngehapus semua operator, sama panggil funct buat ngehapus displayNum == 0
+                lalu displayNum += number
+    end func
+
+6.funct tambahan sebut aja tampungNum, ini buat ngepush number ke array kosong yang sebelumnya dah dibuat, sebut aja inputNum
+        func tampungNum
+            inputNum.push(displayNum) // jadi angka yang kita masukan sebelumnya akan dipush ke array ini
+            displayNum = operator // jadi ketika btn operator diklik maka akan render operatornya
+7. func tambahan juga ketika btn = diklik maka akan manggil func ini, sebut aja result
+        func result 
+            inputNum.push(displayNum) // jadi angka yang kita masukan sebelumnya akan dipush ke array ini
+            displayNum = panggil func buat ngitung hasilnya
+
+8. next func operator
+
+    func operator(operator)
+        disini kasi kondisi ketika operator = "AC" 
+            maka variable tampung string ini kita kosongkan biar ga keloop angka yang dah di masukan tadi 
+            trus times dibuat 0, sama displayNum = 0;
+        jiak kondisi operator = "Del"
+            tampung = ""
+            kasi nested condt jika panjang dari displayNum = 1 || ini optional displayNum = 00 && displayNum length 2 
+                maka times kita buat 0 lagi, sama displayNum juga 0
+            else(ini buat menghapus angka satu persatu)
+                disini tak buat variable buat nampung hasil dari displayNum.slice
+                displayNum = variable atasnya
+        jika operator = "." maka displayNum += operator
+        else
+            nah disini tak panggil funct tampungNum, trus push operatornya ke array inputNum
+9. lalu func calculate(), ini isinya manggil func result
+10. nah selajutnya kalo saya buat func buat ngitung
+    func hitung
+        isinya bisa liat disini https://stackoverflow.com/questions/62712250/chaining-multiple-operations-in-a-javascript-calculator
+        trus dibawah kita hapus isi array inputNum nya biar bisa masukin angka baru
+        state kita buat true
+        return 
+
+
+nah mungkin gitu kurang lebih si mas, sori rada mumeti emang codeku, moga paham, kalo ga paham bisa tanya aja
+                    
+
